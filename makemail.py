@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 from email.utils import getaddresses
 from smtplib import SMTP
 
-SMTP_SERVER = 'alpha.xerox.com'
+SMTP_SERVER = None
 
 
 class TextMail(MIMEText):
