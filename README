@@ -1,1 +1,14 @@
 A tiny python "DSL" that makes it easier to send email
+
+
+USAGE:
+
+import makemail
+makemail.SMTP_SERVER = 'your.smtp.server'
+
+from makemail import *
+
+send(Multipart('mixed',to='a@example.com', _from='b@example.com', subject='foo').containing(
+     TextMail().containing("hello I am first"),
+     TextMail(content_disposition='inline').containing("I will be an inline attachment"),
+))
